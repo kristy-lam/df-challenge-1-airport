@@ -1,5 +1,7 @@
-const airport = {
+export const airport = {
     capacity: 10,
 };
 
-export default airport;
+export const modifyCapacity = (newCapacity) => {
+    airport.capacity = newCapacity;
+}

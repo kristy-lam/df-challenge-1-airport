@@ -1,5 +1,6 @@
-import airport from "../src/airport.js";
 import { assertEquals } from "../spec/test-framework.js";
+import { airport } from "../src/airport.js";
+import { modifyCapacity } from "../src/airport.js";
 
 // AFTER EACH function
 const afterEach = () => {
@@ -54,8 +55,8 @@ expected = 20;
 let testCapacity = 20;
 
 // Act
-modifyCapacity();
-actual = Object.values(airport.capacity);
+modifyCapacity(testCapacity);
+actual = airport.capacity;
 
 // Assert
 result = assertEquals(expected, actual);
@@ -67,6 +68,7 @@ console.log(`==================`);
 
 // Clean Up
 afterEach();
+testCapacity = undefined;
 
 //! END OF USER STORY 2 - TEST 1
 
