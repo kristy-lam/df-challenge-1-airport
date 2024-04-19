@@ -15,6 +15,7 @@ export const airport = {
     },
 
     isAirportFull: function () {
+        return this.getNumOfPlanesAtAirport === this.capacity;
     },
 
 };
