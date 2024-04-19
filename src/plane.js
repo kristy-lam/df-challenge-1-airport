@@ -1,5 +1,6 @@
 export class Plane {
-    constructor() {
+    constructor() {        
+        this.isAtAirport = false;  // default not at airport for testing
     }
 };
 
