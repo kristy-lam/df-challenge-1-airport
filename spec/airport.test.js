@@ -7,6 +7,7 @@ const afterEach = () => {
     expected = undefined;
     actual = undefined;
     result = undefined;
+    testCapacity = undefined;
 };
 
 // * User Story 1
@@ -36,7 +37,9 @@ console.log(result ? `Pass` : `Fail`);
 console.log(`==================`);
 
 // Clean Up
-afterEach();
+expected = undefined;
+actual = undefined;
+result = undefined;
 
 //! END OF USER STORY 1 - TEST 1
 
@@ -68,7 +71,34 @@ console.log(`==================`);
 
 // Clean Up
 afterEach();
-testCapacity = undefined;
 
 //! END OF USER STORY 2 - TEST 1
+
+// ? Test 2: Test that only a number can only be used as capacity
+console.log(`Test 2`);
+console.log(`==================`);
+console.log(
+    `Test that only a number can only be used as capacity`
+);
+
+// Arrange
+expected = 10;
+testCapacity = "fifteen";
+
+// Act
+modifyCapacity(testCapacity);
+actual = airport.capacity;
+
+// Assert
+result = assertEquals(expected, actual);
+
+// Report
+console.log(result ? `Pass` : `Fail`);
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================`);
+
+// Clean Up
+afterEach();
+
+//! END OF USER STORY 2 - TEST 2
 
