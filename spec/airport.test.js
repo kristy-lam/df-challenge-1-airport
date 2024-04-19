@@ -189,3 +189,29 @@ console.log(`==================`);
 afterEach();
 
 //! END OF USER STORY 4 - TEST 1
+
+// ? Test 2: Test the isAirportFull function correctly shows whether the airport is full
+console.log(`Test 1`);
+console.log(`==================`);
+console.log(
+    `Test the isAirportFull function correctly shows whether the airport is full`
+);
+
+// Arrange
+expected = false;
+
+// Act
+actual = airport.isAirportFull();
+
+// Assert
+result = assertEquals(expected, actual);
+
+// Report
+console.log(result ? `Pass` : `Fail`);
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================`);
+
+// Clean Up
+afterEach();
+
+//! END OF USER STORY 4 - TEST 2

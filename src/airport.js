@@ -14,6 +14,9 @@ export const airport = {
         return this.planesAtAirport.length;
     },
 
+    isAirportFull: function () {
+    },
+
 };
 
 export default airport;
