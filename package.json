@@ -11,6 +11,6 @@
     "start": "node src/index.js",
     "test": "node specRunner.js"
   },
-  "author": "",
+  "author": "Kristy Lam",
   "license": "ISC"
 }
