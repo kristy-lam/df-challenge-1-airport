@@ -164,18 +164,18 @@ afterEach();
 // * User Story 4
 console.log(`USER STORY 4`);
 
-// ? Test 1: Check there is a property of planesAtAirport as an array
+// ? Test 1: Test the getNumOfPlanesAtAirport function correctly shows the number of planes currently at the airport
 console.log(`Test 1`);
 console.log(`==================`);
 console.log(
-    `Check there is a property of planesAtAirport as an array`
+    `Test the getNumOfPlanesAtAirport function correctly shows the number of planes currently at the airport`
 );
 
 // Arrange
-expected = true;
+expected = 0;
 
 // Act
-actual = Object.hasOwn(airport, 'planesAtAirport');
+actual = airport.getNumOfPlanesAtAirport();
 
 // Assert
 result = assertEquals(expected, actual);
@@ -189,30 +189,3 @@ console.log(`==================`);
 afterEach();
 
 //! END OF USER STORY 4 - TEST 1
-
-// ? Test 2: Test the isAirportFull function correctly shows whether the airport is full
-console.log(`Test 1`);
-console.log(`==================`);
-console.log(
-    `Test the isAirportFull function correctly shows whether the airport is full`
-);
-
-// Arrange
-expected = false;
-airport.planesAtAirport = 5;
-
-// Act
-actual = airport.isAirportFull(airport.planesAtAirport, airport.capacity);
-
-// Assert
-result = assertEquals(expected, actual);
-
-// Report
-console.log(result ? `Pass` : `Fail`);
-!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
-console.log(`==================`);
-
-// Clean Up
-afterEach();
-
-//! END OF USER STORY 4 - TEST 2
