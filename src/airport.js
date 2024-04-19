@@ -4,7 +4,8 @@ export const airport = {
         if (Number.isInteger(newCapacity) && newCapacity >= 0) {
             this.capacity = newCapacity;
         }
-    },    
+    },
+    planesAtAirport: [],
 };
 
 export default airport;
