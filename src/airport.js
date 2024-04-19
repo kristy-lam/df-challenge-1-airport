@@ -3,5 +3,7 @@ export const airport = {
 };
 
 export const modifyCapacity = (newCapacity) => {
-    airport.capacity = newCapacity;
+    if (typeof newCapacity === Number) {
+        airport.capacity = newCapacity;
+    }    
 }
