@@ -1,12 +1,12 @@
+import airport from "../src/airport.js";
 import { assertEquals } from "../spec/test-framework.js";
-import { airport } from "../src/airport.js";
-import { modifyCapacity } from "../src/airport.js";
 
 // AFTER EACH function
 const afterEach = () => {
     expected = undefined;
     actual = undefined;
     result = undefined;
+    airport.capacity = 10;  // Back to default capacity
     testCapacity = undefined;
 };
 
@@ -58,7 +58,7 @@ expected = 20;
 let testCapacity = 20;
 
 // Act
-modifyCapacity(testCapacity);
+airport.modifyCapacity(testCapacity);
 actual = airport.capacity;
 
 // Assert
@@ -86,7 +86,7 @@ expected = 10;
 testCapacity = "fifteen";
 
 // Act
-modifyCapacity(testCapacity);
+airport.modifyCapacity(testCapacity);
 actual = airport.capacity;
 
 // Assert
@@ -102,3 +102,30 @@ afterEach();
 
 //! END OF USER STORY 2 - TEST 2
 
+// ? Test 3: Test that only a positive number can only be used as capacity
+console.log(`Test 3`);
+console.log(`==================`);
+console.log(
+    `Test that only a positive number can only be used as capacity`
+);
+
+// Arrange
+expected = 10;
+testCapacity = -8;
+
+// Act
+airport.modifyCapacity(testCapacity);
+actual = airport.capacity;
+
+// Assert
+result = assertEquals(expected, actual);
+
+// Report
+console.log(result ? `Pass` : `Fail`);
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================`);
+
+// Clean Up
+afterEach();
+
+//! END OF USER STORY 2 - TEST 3
