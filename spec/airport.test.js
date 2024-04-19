@@ -134,11 +134,11 @@ afterEach();
 // * User Story 3
 console.log(`USER STORY 3`);
 
-// ? Test 1: Test that there is a Boolean property of atAirport for a plane object
+// ? Test 1: Test that there is a Boolean property of isAtAirport for a plane object
 console.log(`Test 1`);
 console.log(`==================`);
 console.log(
-    `Test that there is a Boolean property of atAirport for a plane object`
+    `Test that there is a Boolean property of isAtAirport for a plane object`
 );
 
 // Arrange
@@ -159,4 +159,30 @@ console.log(`==================`);
 // Clean Up
 afterEach();
 
-//! END OF USER STORY 3 - TEST 1
+//! END OF USER STORY 4 - TEST 1
+
+// ? Test 1: Check there is a property of planesAtAirport as an array
+console.log(`Test 1`);
+console.log(`==================`);
+console.log(
+    `Check there is a property of planesAtAirport as an array`
+);
+
+// Arrange
+expected = true;
+
+// Act
+actual = Object.hasOwn(airport, 'planesAtAirport');
+
+// Assert
+result = assertEquals(expected, actual);
+
+// Report
+console.log(result ? `Pass` : `Fail`);
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================`);
+
+// Clean Up
+afterEach();
+
+//! END OF USER STORY 4 - TEST 1
