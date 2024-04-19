@@ -1,4 +1,5 @@
 import airport from "../src/airport.js";
+import Plane from "../src/plane.js";
 import { assertEquals } from "../spec/test-framework.js";
 
 // AFTER EACH function
@@ -129,3 +130,33 @@ console.log(`==================`);
 afterEach();
 
 //! END OF USER STORY 2 - TEST 3
+
+// * User Story 3
+console.log(`USER STORY 3`);
+
+// ? Test 1: Test that there is a Boolean property of atAirport for a plane object
+console.log(`Test 1`);
+console.log(`==================`);
+console.log(
+    `Test that there is a Boolean property of atAirport for a plane object`
+);
+
+// Arrange
+expected = false;
+
+// Act
+let testPlane = new Plane;
+actual = testPlane.isAtAirport;
+
+// Assert
+result = assertEquals(expected, actual);
+
+// Report
+console.log(result ? `Pass` : `Fail`);
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================`);
+
+// Clean Up
+afterEach();
+
+//! END OF USER STORY 3 - TEST 1
