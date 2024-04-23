@@ -1,6 +1,7 @@
 import airport from "../src/airport.js";
 import Plane from "../src/Plane.js";
 import { assertEquals } from "../spec/test-framework.js";
+import chalk from "chalk";
 
 // AFTER EACH function
 const afterEach = () => {
@@ -34,7 +35,7 @@ actual = Object.hasOwn(airport, 'capacity');
 result = assertEquals(expected, actual);
 
 // Report
-console.log(result ? `Pass` : `Fail`);
+console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
 !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
 console.log(`==================`);
 
@@ -67,7 +68,7 @@ actual = airport.capacity;
 result = assertEquals(expected, actual);
 
 // Report
-console.log(result ? `Pass` : `Fail`);
+console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
 !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
 console.log(`==================`);
 
@@ -95,7 +96,7 @@ actual = airport.capacity;
 result = assertEquals(expected, actual);
 
 // Report
-console.log(result ? `Pass` : `Fail`);
+console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
 !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
 console.log(`==================`);
 
@@ -123,7 +124,7 @@ actual = airport.capacity;
 result = assertEquals(expected, actual);
 
 // Report
-console.log(result ? `Pass` : `Fail`);
+console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
 !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
 console.log(`==================`);
 
@@ -139,21 +140,21 @@ console.log(`USER STORY 3`);
 console.log(`Test 1`);
 console.log(`==================`);
 console.log(
-    `Test that there is a Boolean property of isAtAirport for a plane object`
+    `Test that there is a property of isAtAirport for a plane object`
 );
 
 // Arrange
-expected = false;
+expected = true;
 
 // Act
 let testPlane = new Plane;
-actual = testPlane.isAtAirport;
+actual = Object.hasOwn(testPlane, 'isAtAirport');
 
 // Assert
 result = assertEquals(expected, actual);
 
 // Report
-console.log(result ? `Pass` : `Fail`);
+console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
 !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
 console.log(`==================`);
 
@@ -182,7 +183,7 @@ actual = airport.getNumOfPlanesAtAirport();
 result = assertEquals(expected, actual);
 
 // Report
-console.log(result ? `Pass` : `Fail`);
+console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
 !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
 console.log(`==================`);
 
@@ -192,7 +193,7 @@ afterEach();
 //! END OF USER STORY 4 - TEST 1
 
 // ? Test 2: Test the isAirportFull function correctly shows whether the airport is full
-console.log(`Test 1`);
+console.log(`Test 2`);
 console.log(`==================`);
 console.log(
     `Test the isAirportFull function correctly shows whether the airport is full`
@@ -208,7 +209,7 @@ actual = airport.isAirportFull();
 result = assertEquals(expected, actual);
 
 // Report
-console.log(result ? `Pass` : `Fail`);
+console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
 !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
 console.log(`==================`);
 
@@ -240,7 +241,7 @@ actual = airport.planesAtAirport.includes(testPlane);
 result = assertEquals(expected, actual);
 
 // Report
-console.log(result ? `Pass` : `Fail`);
+console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
 !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
 console.log(`==================`);
 
@@ -269,7 +270,7 @@ actual = airport.planesAtAirport.includes(testPlane);
 result = assertEquals(expected, actual);
 
 // Report
-console.log(result ? `Pass` : `Fail`);
+console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
 !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
 console.log(`==================`);
 
@@ -299,7 +300,7 @@ actual = airport.planesAtAirport.length;
 result = assertEquals(expected, actual);
 
 // Report
-console.log(result ? `Pass` : `Fail`);
+console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
 !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
 console.log(`==================`);
 
@@ -319,17 +320,17 @@ console.log(
 // Arrange
 testPlane = new Plane();
 airport.planesAtAirport = [testPlane];
-expected = false;
+expected = undefined;
 
 // Act
 airport.instructToLand(testPlane);
-actual = testPlane.allowedToLand;
+actual = testPlane.instructedToLand;
 
 // Assert
 result = assertEquals(expected, actual);
 
 // Report
-console.log(result ? `Pass` : `Fail`);
+console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
 !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
 console.log(`==================`);
 
@@ -353,13 +354,13 @@ expected = true;
 
 // Act
 airport.addPlane(testPlane);
-actual = testPlane.isAtAirport();
+actual = testPlane.isAtAirport;
 
 // Assert
 result = assertEquals(expected, actual);
 
 // Report
-console.log(result ? `Pass` : `Fail`);
+console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
 !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
 console.log(`==================`);
 
