@@ -251,7 +251,7 @@ testPlane = undefined;
 //! END OF USER STORY 5 - TEST 1
 
 // ? Test 2: Test that a plane which is not an instance of the Plane class cannot be added to the planesAtAirport array
-console.log(`Test 1`);
+console.log(`Test 2`);
 console.log(`==================`);
 console.log(
     `Test that a plane which is not an instance of the Plane class cannot be added to the planesAtAirport array`
@@ -280,7 +280,7 @@ testPlane = undefined;
 //! END OF USER STORY 5 - TEST 2
 
 // ? Test 3: Test that the same plane cannot be added to the planesAtAirport array again when it is already at the airport
-console.log(`Test 1`);
+console.log(`Test 3`);
 console.log(`==================`);
 console.log(
     `Test that the same plane cannot be added to the planesAtAirport array again when it is already at the airport`
@@ -309,9 +309,8 @@ testPlane = undefined;
 
 //! END OF USER STORY 5 - TEST 3
 
-
 // ? Test 4: Test that a plane which is already at the airport cannot be instructed to land
-console.log(`Test 1`);
+console.log(`Test 4`);
 console.log(`==================`);
 console.log(
     `Test that a plane which is already at the airport cannot be instructed to land`
@@ -338,4 +337,34 @@ console.log(`==================`);
 afterEach();
 testPlane = undefined;
 
-//! END OF USER STORY 5 - TEST 3
+//! END OF USER STORY 5 - TEST 4
+
+
+// ? Test 5: Test that when a plane has landed at the airport, its isAtAirport property is changed to true
+console.log(`Test 5`);
+console.log(`==================`);
+console.log(
+    `Test that when a plane has landed at the airport, its isAtAirport property is changed to true`
+);
+
+// Arrange
+testPlane = new Plane();
+expected = true;
+
+// Act
+airport.addPlane(testPlane);
+actual = testPlane.isAtAirport();
+
+// Assert
+result = assertEquals(expected, actual);
+
+// Report
+console.log(result ? `Pass` : `Fail`);
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================`);
+
+// Clean Up
+afterEach();
+testPlane = undefined;
+
+//! END OF USER STORY 5 - TEST 5
