@@ -324,7 +324,7 @@ expected = false;
 
 // Act
 airport.instructToLand(testPlane);
-actual = testPlane.allowedToLand();
+actual = testPlane.allowedToLand;
 
 // Assert
 result = assertEquals(expected, actual);

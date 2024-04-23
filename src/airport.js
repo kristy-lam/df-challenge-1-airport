@@ -24,6 +24,14 @@ export const airport = {
         if (plane instanceof Plane && (!this.planesAtAirport.includes(plane))) {
             return this.planesAtAirport.push(plane);
         }
+    },
+
+    instructToLand: function (plane) {
+        if ((!this.planesAtAirport.includes(plane))) {
+            plane.allowedToLand = true;
+        } else {
+            plane.allowedToLand = false;
+        }
     }
 
 };

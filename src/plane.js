@@ -1,7 +1,7 @@
-export class Plane {
+export default class Plane {
     constructor() {        
         this.isAtAirport = false;  // default not at airport for testing
     }
-};
 
-export default Plane;
+    allowedToLand;
+};
