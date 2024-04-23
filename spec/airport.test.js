@@ -245,6 +245,35 @@ console.log(`==================`);
 
 // Clean Up
 afterEach();
+testPlane = undefined;
 
 //! END OF USER STORY 5 - TEST 1
 
+// ? Test 2: Test that a plane which is not an instance of the Plane class cannot be added to the planesAtAirport array
+console.log(`Test 1`);
+console.log(`==================`);
+console.log(
+    `Test that a plane which is not an instance of the Plane class cannot be added to the planesAtAirport array`
+);
+
+// Arrange
+testPlane = {};
+expected = false;
+
+// Act
+airport.addPlane(testPlane);
+actual = airport.planesAtAirport.includes(testPlane);
+
+// Assert
+result = assertEquals(expected, actual);
+
+// Report
+console.log(result ? `Pass` : `Fail`);
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================`);
+
+// Clean Up
+afterEach();
+testPlane = undefined;
+
+//! END OF USER STORY 5 - TEST 2
