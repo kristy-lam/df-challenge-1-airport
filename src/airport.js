@@ -21,7 +21,7 @@ export const airport = {
     },
 
     addPlane: function (plane) {
-        if (plane instanceof Plane && (!this.planesAtAirport.includes(plane))) {
+        if (plane instanceof Plane && !(this.planesAtAirport.includes(plane))) {
             this.planesAtAirport.push(plane);
             plane.landed();
         }

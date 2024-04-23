@@ -340,7 +340,6 @@ testPlane = undefined;
 
 //! END OF USER STORY 5 - TEST 4
 
-
 // ? Test 5: Test that when a plane has landed at the airport, its isAtAirport property is changed to true
 console.log(`Test 5`);
 console.log(`==================`);
@@ -355,6 +354,36 @@ expected = true;
 // Act
 airport.addPlane(testPlane);
 actual = testPlane.isAtAirport;
+
+// Assert
+result = assertEquals(expected, actual);
+
+// Report
+console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================`);
+
+// Clean Up
+afterEach();
+testPlane = undefined;
+
+//! END OF USER STORY 5 - TEST 5
+
+// ? Test 6: Test that a plane cannot be added to the airport when is full
+console.log(`Test 6`);
+console.log(`==================`);
+console.log(
+    `Test that a plane cannot be added to the airport when is full`
+);
+
+// Arrange
+airport.capacity = 0;
+testPlane = new Plane();
+expected = false;
+
+// Act
+airport.addPlane(testPlane);
+actual = airport.planesAtAirport.includes(testPlane);
 
 // Assert
 result = assertEquals(expected, actual);
