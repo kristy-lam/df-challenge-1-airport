@@ -467,3 +467,40 @@ testPlane1 = undefined;
 testPlane2 = undefined;
 
 //! END OF USER STORY 5 - TEST 6
+
+// * User Story 6
+console.log(`USER STORY 6`);
+
+// ? Test 1: Test when a plane is removed, that plane is removed from the planesAtAirport array
+console.log(`Test 1`);
+console.log(`==================`);
+console.log(
+    `Test when a plane is removed, that plane is removed from the planesAtAirport array`
+);
+
+// Arrange
+testPlane1 = new Plane();
+testPlane2 = new Plane();
+airport.addPlane(testPlane1);
+airport.addPlane(testPlane2);
+expected = false;
+
+// Act
+airport.removePlane(testPlane1);
+actual = airport.planesAtAirport.includes(testPlane1);
+
+// Assert
+result = assertEquals(expected, actual);
+
+// Report
+console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================`);
+
+// Clean Up
+afterEach();
+testPlane1 = undefined;
+testPlane2 = undefined;
+
+//! END OF USER STORY 6 - TEST 1
+
