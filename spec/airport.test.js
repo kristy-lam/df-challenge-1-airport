@@ -213,5 +213,36 @@ console.log(`==================`);
 
 // Clean Up
 afterEach();
+testPlane = undefined;
+
+//! END OF USER STORY 4 - TEST 2
+
+// * User Story 5
+console.log(`USER STORY 5`);
+
+// ? Test 1: Test when a plane is added, that plane is in the planesAtAirport array
+console.log(`Test 1`);
+console.log(`==================`);
+console.log(
+    `Test when a plane is added, that plane is in the planesAtAirport array`
+);
+
+// Arrange
+testPlane = new Plane();
+expected = airport.planesAtAirport.includes(testPlane);
+
+// Act
+actual = airport.addPlane(testPlane);
+
+// Assert
+result = assertEquals(expected, actual);
+
+// Report
+console.log(result ? `Pass` : `Fail`);
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================`);
+
+// Clean Up
+afterEach();
 
 //! END OF USER STORY 4 - TEST 2
