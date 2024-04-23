@@ -18,6 +18,10 @@ export const airport = {
         return this.getNumOfPlanesAtAirport === this.capacity;
     },
 
+    addPlane: function (plane) {
+        return this.planesAtAirport.push(plane);
+    }
+
 };
 
 export default airport;

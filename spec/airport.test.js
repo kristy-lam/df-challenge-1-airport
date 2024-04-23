@@ -229,10 +229,11 @@ console.log(
 
 // Arrange
 testPlane = new Plane();
-expected = airport.planesAtAirport.includes(testPlane);
+expected = true;
 
 // Act
-actual = airport.addPlane(testPlane);
+airport.addPlane(testPlane);
+actual = airport.planesAtAirport.includes(testPlane);
 
 // Assert
 result = assertEquals(expected, actual);
@@ -245,4 +246,5 @@ console.log(`==================`);
 // Clean Up
 afterEach();
 
-//! END OF USER STORY 4 - TEST 2
+//! END OF USER STORY 5 - TEST 1
+
