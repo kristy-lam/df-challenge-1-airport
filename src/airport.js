@@ -1,3 +1,5 @@
+import Plane from "./Plane.js";
+
 export const airport = {    
 
     capacity: 10,  // default capacity used for testing
@@ -19,7 +21,9 @@ export const airport = {
     },
 
     addPlane: function (plane) {
-        return this.planesAtAirport.push(plane);
+        if (plane instanceof Plane) {
+            return this.planesAtAirport.push(plane);
+        }
     }
 
 };

@@ -1,5 +1,5 @@
 import airport from "../src/airport.js";
-import Plane from "../src/plane.js";
+import Plane from "../src/Plane.js";
 import { assertEquals } from "../spec/test-framework.js";
 
 // AFTER EACH function
