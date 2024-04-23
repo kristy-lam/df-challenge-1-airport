@@ -37,6 +37,12 @@ export const airport = {
         if ((!this.planesAtAirport.includes(plane))) {
             plane.instructedToLand = true;
         }
+    },
+
+    instructToTakeOff: function (plane) {
+        if (this.planesAtAirport.includes(plane)) {
+            plane.instructedToTakeOff = true;
+        }
     }
 
 };

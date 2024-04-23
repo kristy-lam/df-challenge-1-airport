@@ -562,4 +562,4 @@ console.log(`==================`);
 // Clean Up
 afterEach();
 
-//! END OF USER STORY 6 - TEST 2
+//! END OF USER STORY 6 - TEST 3
