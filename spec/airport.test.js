@@ -9,7 +9,6 @@ const afterEach = () => {
     actual = undefined;
     result = undefined;
     airport.capacity = 10;  // Back to default capacity
-    testCapacity = undefined;
     airport.planesAtAirport = [];
 };
 
@@ -40,9 +39,7 @@ console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
 console.log(`==================`);
 
 // Clean Up
-expected = undefined;
-actual = undefined;
-result = undefined;
+afterEach();
 
 //! END OF USER STORY 1 - TEST 1
 
@@ -74,6 +71,7 @@ console.log(`==================`);
 
 // Clean Up
 afterEach();
+testCapacity = undefined;
 
 //! END OF USER STORY 2 - TEST 1
 
@@ -102,6 +100,7 @@ console.log(`==================`);
 
 // Clean Up
 afterEach();
+testCapacity = undefined;
 
 //! END OF USER STORY 2 - TEST 2
 
@@ -130,13 +129,14 @@ console.log(`==================`);
 
 // Clean Up
 afterEach();
+testCapacity = undefined;
 
 //! END OF USER STORY 2 - TEST 3
 
 // * User Story 3
 console.log(`USER STORY 3`);
 
-// ? Test 1: Test that there is a Boolean property of isAtAirport for a plane object
+// ? Test 1: Test that there is a property of isAtAirport for a plane object
 console.log(`Test 1`);
 console.log(`==================`);
 console.log(
@@ -160,8 +160,38 @@ console.log(`==================`);
 
 // Clean Up
 afterEach();
+testPlane = undefined;
 
 //! END OF USER STORY 3 - TEST 1
+
+// ? Test 2: Test that user can get the isAtAirport property of a plane
+console.log(`Test 2`);
+console.log(`==================`);
+console.log(
+    `Test that user can get the isAtAirport property of a plane`
+);
+
+// Arrange
+testPlane = new Plane;
+testPlane.isAtAirport = true;
+expected = true;
+
+// Act
+actual = getIsAtAirport(testPlane);
+
+// Assert
+result = assertEquals(expected, actual);
+
+// Report
+console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================`);
+
+// Clean Up
+afterEach();
+testPlane = undefined;
+
+//! END OF USER STORY 3 - TEST 2
 
 // * User Story 4
 console.log(`USER STORY 4`);
@@ -215,7 +245,6 @@ console.log(`==================`);
 
 // Clean Up
 afterEach();
-testPlane = undefined;
 
 //! END OF USER STORY 4 - TEST 2
 
@@ -257,12 +286,7 @@ console.log(
 
 // Arrange
 function generateTestPlanes(num) {
-    const testPlanes = [];
-    for (let i = 1; i <= num; i++) {
-        const plane = new Plane();
-        testPlanes.push(plane);
-    }
-    return testPlanes;
+    return Array.from({ length: num }, () => new Plane());
 }
 const testPlanesArray = generateTestPlanes(10);
 airport.planesAtAirport = testPlanesArray;
