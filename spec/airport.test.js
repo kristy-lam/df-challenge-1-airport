@@ -530,5 +530,36 @@ console.log(`==================`);
 
 // Clean Up
 afterEach();
+testPlane = undefined;
+
+//! END OF USER STORY 6 - TEST 2
+
+// ? Test 3: Test that a plane which is not at the airport cannot be instructed to take off
+console.log(`Test 3`);
+console.log(`==================`);
+console.log(
+    `Test that a plane which is not at the airport cannot be instructed to take off`
+);
+
+// Arrange
+testPlane = new Plane();
+airport.addPlane(testPlane);
+airport.removePlane(testPlane);
+expected = undefined;
+
+// Act
+airport.instructToTakeOff(testPlane);
+actual = testPlane.instructedToTakeOff;
+
+// Assert
+result = assertEquals(expected, actual);
+
+// Report
+console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================`);
+
+// Clean Up
+afterEach();
 
 //! END OF USER STORY 6 - TEST 2
