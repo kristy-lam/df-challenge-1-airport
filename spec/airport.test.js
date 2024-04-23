@@ -9,6 +9,7 @@ const afterEach = () => {
     result = undefined;
     airport.capacity = 10;  // Back to default capacity
     testCapacity = undefined;
+    airport.planesAtAirport = [];
 };
 
 // * User Story 1
@@ -277,3 +278,33 @@ afterEach();
 testPlane = undefined;
 
 //! END OF USER STORY 5 - TEST 2
+
+// ? Test 3: Test that the same plane cannot be added to the planesAtAirport array again when it is already at the airport
+console.log(`Test 1`);
+console.log(`==================`);
+console.log(
+    `Test that the same plane cannot be added to the planesAtAirport array again when it is already at the airport`
+);
+
+// Arrange
+testPlane = new Plane();
+expected = 1;
+
+// Act
+airport.addPlane(testPlane);
+airport.addPlane(testPlane);
+actual = airport.planesAtAirport.length;
+
+// Assert
+result = assertEquals(expected, actual);
+
+// Report
+console.log(result ? `Pass` : `Fail`);
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================`);
+
+// Clean Up
+afterEach();
+testPlane = undefined;
+
+//! END OF USER STORY 5 - TEST 3
