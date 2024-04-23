@@ -27,6 +27,10 @@ export const airport = {
         }
     },
 
+    removePlane: function (plane) {
+        this.planesAtAirport.pop(plane);
+    },
+
     instructToLand: function (plane) {
         if ((!this.planesAtAirport.includes(plane))) {
             plane.instructedToLand = true;

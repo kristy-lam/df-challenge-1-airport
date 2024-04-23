@@ -479,15 +479,15 @@ console.log(
 );
 
 // Arrange
-testPlane1 = new Plane();
-testPlane2 = new Plane();
-airport.addPlane(testPlane1);
-airport.addPlane(testPlane2);
+testPlane1 = new Plane('testPlane1');
+testPlane2 = new Plane('testPlane1');
+airport.addPlane('testPlane1');
+airport.addPlane('testPlane1');
 expected = false;
 
 // Act
-airport.removePlane(testPlane1);
-actual = airport.planesAtAirport.includes(testPlane1);
+airport.removePlane('testPlane1');
+actual = airport.planesAtAirport.includes('testPlane1');
 
 // Assert
 result = assertEquals(expected, actual);
