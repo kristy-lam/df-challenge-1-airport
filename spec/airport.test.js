@@ -192,18 +192,18 @@ afterEach();
 
 //! END OF USER STORY 4 - TEST 1
 
-// ? Test 2: Test the isAirportFull function correctly shows whether the airport is full
+// ? Test 2: Test the isFull function is correct when the airport is empty
 console.log(`Test 2`);
 console.log(`==================`);
 console.log(
-    `Test the isAirportFull function correctly shows whether the airport is full`
+    `Test the isFull function is correct when the airport is empty`
 );
 
 // Arrange
 expected = false;
 
 // Act
-actual = airport.isAirportFull();
+actual = airport.isFull();
 
 // Assert
 result = assertEquals(expected, actual);
@@ -219,6 +219,72 @@ testPlane = undefined;
 
 //! END OF USER STORY 4 - TEST 2
 
+// ? Test 3: Test the isFull function is correct when there is a plane at the airport
+console.log(`Test 3`);
+console.log(`==================`);
+console.log(
+    `Test the isFull function is correct when there is a plane at the airport`
+);
+
+// Arrange
+testPlane = new Plane;
+airport.addPlane(testPlane);
+expected = false;
+
+// Act
+actual = airport.isFull();
+
+// Assert
+result = assertEquals(expected, actual);
+
+// Report
+console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================`);
+
+// Clean Up
+afterEach();
+testPlane = undefined;
+
+//! END OF USER STORY 4 - TEST 3
+
+// ? Test 4: Test the isFull function is correct when the airport is full
+console.log(`Test 3`);
+console.log(`==================`);
+console.log(
+    `Test the isFull function is correct when the airport is full`
+);
+
+// Arrange
+function generateTestPlanes(num) {
+    const testPlanes = [];
+    for (let i = 1; i <= num; i++) {
+        const plane = new Plane();
+        testPlanes.push(plane);
+    }
+    return testPlanes;
+}
+const testPlanesArray = generateTestPlanes(10);
+airport.planesAtAirport = testPlanesArray;
+expected = true;
+
+// Act
+actual = airport.isFull();
+
+// Assert
+result = assertEquals(expected, actual);
+
+// Report
+console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================`);
+
+// Clean Up
+afterEach();
+testPlane = undefined;
+
+//! END OF USER STORY 4 - TEST 4
+
 // * User Story 5
 console.log(`USER STORY 5`);
 
@@ -226,7 +292,7 @@ console.log(`USER STORY 5`);
 console.log(`Test 1`);
 console.log(`==================`);
 console.log(
-    `Test when a plane is added, that plane is in the planesAtAirport array`
+    `Test when a plane is added, that plane is in the planesAtAirport array`
 );
 
 // Arrange
@@ -377,13 +443,15 @@ console.log(
 );
 
 // Arrange
-airport.capacity = 0;
-testPlane = new Plane();
+airport.capacity = 1;
+let testPlane1 = new Plane();
+airport.addPlane(testPlane1);
+let testPlane2 = new Plane();
 expected = false;
 
 // Act
-airport.addPlane(testPlane);
-actual = airport.planesAtAirport.includes(testPlane);
+airport.addPlane(testPlane2);
+actual = airport.planesAtAirport.includes(testPlane2);
 
 // Assert
 result = assertEquals(expected, actual);
@@ -395,6 +463,7 @@ console.log(`==================`);
 
 // Clean Up
 afterEach();
-testPlane = undefined;
+testPlane1 = undefined;
+testPlane2 = undefined;
 
-//! END OF USER STORY 5 - TEST 5
+//! END OF USER STORY 5 - TEST 6

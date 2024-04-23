@@ -1,4 +1,4 @@
-import Plane from "./Plane.js";
+import Plane from '../src/Plane.js';
 
 export const airport = {    
 
@@ -15,15 +15,15 @@ export const airport = {
     getNumOfPlanesAtAirport: function () {        
         return this.planesAtAirport.length;
     },
-
-    isAirportFull: function () {
-        return this.getNumOfPlanesAtAirport === this.capacity;
-    },
+    
+    isFull: function () {
+        return this.planesAtAirport.length === this.capacity;
+    },    
 
     addPlane: function (plane) {
-        if (plane instanceof Plane && !(this.planesAtAirport.includes(plane))) {
+        if (plane instanceof Plane && !this.planesAtAirport.includes(plane) && !(this.isFull())) {
+            plane.isAtAirport = true;
             this.planesAtAirport.push(plane);
-            plane.landed();
         }
     },
 

@@ -1,10 +1,7 @@
-import airport from "./airport.js";
 export default class Plane {
-
-    isAtAirport;
-    
-    landed = () => { this.isAtAirport = true; }
-    
-    instructedToLand;
-    
+    constructor(name) {
+        this.name = name;
+        this.isAtAirport = undefined;
+        this.instructedToLand = undefined;
+    }   
 };
