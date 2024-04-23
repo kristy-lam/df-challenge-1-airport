@@ -177,7 +177,7 @@ testPlane.isAtAirport = true;
 expected = true;
 
 // Act
-actual = getIsAtAirport(testPlane);
+actual = testPlane.getIsAtAirport(testPlane);
 
 // Assert
 result = assertEquals(expected, actual);
