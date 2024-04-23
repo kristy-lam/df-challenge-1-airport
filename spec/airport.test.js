@@ -504,3 +504,31 @@ testPlane2 = undefined;
 
 //! END OF USER STORY 6 - TEST 1
 
+// ? Test 2: Test that when a plane has taken off from the airport, its isAtAirport property is changed to false
+console.log(`Test 2`);
+console.log(`==================`);
+console.log(
+    `Test that when a plane has taken off from the airport, its isAtAirport property is changed to false`
+);
+
+// Arrange
+testPlane = new Plane();
+airport.addPlane(testPlane);
+expected = false;
+
+// Act
+airport.removePlane(testPlane);
+actual = testPlane.isAtAirport;
+
+// Assert
+result = assertEquals(expected, actual);
+
+// Report
+console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================`);
+
+// Clean Up
+afterEach();
+
+//! END OF USER STORY 6 - TEST 1
