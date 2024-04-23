@@ -480,14 +480,14 @@ console.log(
 
 // Arrange
 testPlane1 = new Plane('testPlane1');
-testPlane2 = new Plane('testPlane1');
-airport.addPlane('testPlane1');
-airport.addPlane('testPlane1');
+testPlane2 = new Plane('testPlane2');
+airport.addPlane(testPlane1);
+airport.addPlane(testPlane2);
 expected = false;
 
 // Act
-airport.removePlane('testPlane1');
-actual = airport.planesAtAirport.includes('testPlane1');
+airport.removePlane(testPlane1);
+actual = airport.planesAtAirport.includes(testPlane1);
 
 // Assert
 result = assertEquals(expected, actual);
@@ -531,4 +531,4 @@ console.log(`==================`);
 // Clean Up
 afterEach();
 
-//! END OF USER STORY 6 - TEST 1
+//! END OF USER STORY 6 - TEST 2

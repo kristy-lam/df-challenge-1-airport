@@ -28,7 +28,9 @@ export const airport = {
     },
 
     removePlane: function (plane) {
-        this.planesAtAirport.pop(plane);
+        plane.isAtAirport = false;
+        const planeIndex = this.planesAtAirport.indexOf(plane);
+        this.planesAtAirport.splice(planeIndex, 1);
     },
 
     instructToLand: function (plane) {
