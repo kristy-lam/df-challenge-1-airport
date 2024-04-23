@@ -308,3 +308,34 @@ afterEach();
 testPlane = undefined;
 
 //! END OF USER STORY 5 - TEST 3
+
+
+// ? Test 4: Test that a plane which is already at the airport cannot be instructed to land
+console.log(`Test 1`);
+console.log(`==================`);
+console.log(
+    `Test that a plane which is already at the airport cannot be instructed to land`
+);
+
+// Arrange
+testPlane = new Plane();
+airport.planesAtAirport = [testPlane];
+expected = false;
+
+// Act
+airport.instructToLand(testPlane);
+actual = testPlane.allowedToLand();
+
+// Assert
+result = assertEquals(expected, actual);
+
+// Report
+console.log(result ? `Pass` : `Fail`);
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================`);
+
+// Clean Up
+afterEach();
+testPlane = undefined;
+
+//! END OF USER STORY 5 - TEST 3
