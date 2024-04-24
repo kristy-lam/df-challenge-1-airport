@@ -538,7 +538,6 @@ console.log(
 // Arrange
 testPlane = new Plane();
 airport.instructToLand(testPlane);
-airport.addPlane(testPlane);
 expected = true;
 
 // Act
@@ -558,6 +557,38 @@ testPlane1 = undefined;
 testPlane2 = undefined;
 
 //! END OF USER STORY 6 - TEST 5
+
+
+// ? Test 6.6: Test that after a plane has landed, the instructed to land property of that plane returns to null
+console.log(`Test 6.6`);
+console.log(`==================`);
+console.log(
+    `Test that after a plane has landed, the instructed to land property of that plane returns to null`
+);
+
+// Arrange
+testPlane = new Plane();
+airport.instructToLand(testPlane);
+airport.addPlane(testPlane);
+expected = null;
+
+// Act
+actual = testPlane.getInstructedToLand();
+
+// Assert
+result = assertEquals(expected, actual);
+
+// Report
+console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================`);
+
+// Clean Up
+afterEach();
+testPlane1 = undefined;
+testPlane2 = undefined;
+
+//! END OF USER STORY 6 - TEST 6
 
 // * User Story 7
 console.log(`USER STORY 7`);

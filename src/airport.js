@@ -21,7 +21,6 @@ export const airport = {
     addPlane(plane) {
         if (plane instanceof Plane && !this.planesAtAirport.includes(plane) && !(this.isFull())) {
             plane.isAtAirport = true;
-            plane.instructedToLand = true;
             this.planesAtAirport.push(plane);
         }
     },
