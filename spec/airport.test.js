@@ -15,9 +15,9 @@ const afterEach = () => {
 // * User Story 1
 console.log(`USER STORY 1`);
 
-// ? Test 1: Check whether there is a representation of the airport's
+// ? Test 1.1: Check whether there is a representation of the airport's
 // ? maximum capacity of the number of planes that can be at the airport
-console.log(`Test 1`);
+console.log(`Test 1.1`);
 console.log(`==================`);
 console.log(
     `Check whether the airport object has a representation of the airport's maximum capacity as a property`
@@ -44,9 +44,9 @@ afterEach();
 //! END OF USER STORY 1 - TEST 1
 
 // * User Story 2
-console.log(`USER STORY 2`);
+console.log(`USER STORY 2.1`);
 
-// ? Test 1: Test that capacity can be modified accordingly
+// ? Test 1.2: Test that capacity can be modified accordingly
 console.log(`Test 1`);
 console.log(`==================`);
 console.log(
@@ -75,8 +75,8 @@ testCapacity = undefined;
 
 //! END OF USER STORY 2 - TEST 1
 
-// ? Test 2: Test that only a number can only be used as capacity
-console.log(`Test 2`);
+// ? Test 2.2: Test that only a number can only be used as capacity
+console.log(`Test 2.2`);
 console.log(`==================`);
 console.log(
     `Test that only a number can only be used as capacity`
@@ -104,8 +104,8 @@ testCapacity = undefined;
 
 //! END OF USER STORY 2 - TEST 2
 
-// ? Test 3: Test that only a positive number can only be used as capacity
-console.log(`Test 3`);
+// ? Test 2.3: Test that only a positive number can only be used as capacity
+console.log(`Test 2.3`);
 console.log(`==================`);
 console.log(
     `Test that only a positive number can only be used as capacity`
@@ -136,8 +136,8 @@ testCapacity = undefined;
 // * User Story 3
 console.log(`USER STORY 3`);
 
-// ? Test 1: Test that there is a property of isAtAirport for a plane object
-console.log(`Test 1`);
+// ? Test 3.1: Test that there is a property of isAtAirport for a plane object
+console.log(`Test 3.1`);
 console.log(`==================`);
 console.log(
     `Test that there is a property of isAtAirport for a plane object`
@@ -164,8 +164,8 @@ testPlane = undefined;
 
 //! END OF USER STORY 3 - TEST 1
 
-// ? Test 2: Test that user can get the isAtAirport property of a plane
-console.log(`Test 2`);
+// ? Test 3.2: Test that user can get the isAtAirport property of a plane
+console.log(`Test 3.2`);
 console.log(`==================`);
 console.log(
     `Test that user can get the isAtAirport property of a plane`
@@ -196,8 +196,8 @@ testPlane = undefined;
 // * User Story 4
 console.log(`USER STORY 4`);
 
-// ? Test 1: Test the getNumOfPlanesAtAirport function correctly shows the number of planes currently at the airport
-console.log(`Test 1`);
+// ? Test 4.1: Test the getNumOfPlanesAtAirport function correctly shows the number of planes currently at the airport
+console.log(`Test 4.1`);
 console.log(`==================`);
 console.log(
     `Test the getNumOfPlanesAtAirport function correctly shows the number of planes currently at the airport`
@@ -222,8 +222,8 @@ afterEach();
 
 //! END OF USER STORY 4 - TEST 1
 
-// ? Test 2: Test the isFull function is correct when the airport is empty
-console.log(`Test 2`);
+// ? Test 4.2: Test the isFull function is correct when the airport is empty
+console.log(`Test 4.2`);
 console.log(`==================`);
 console.log(
     `Test the isFull function is correct when the airport is empty`
@@ -248,8 +248,8 @@ afterEach();
 
 //! END OF USER STORY 4 - TEST 2
 
-// ? Test 3: Test the isFull function is correct when there is a plane at the airport
-console.log(`Test 3`);
+// ? Test 4.3: Test the isFull function is correct when there is a plane at the airport
+console.log(`Test 4.3`);
 console.log(`==================`);
 console.log(
     `Test the isFull function is correct when there is a plane at the airport`
@@ -277,8 +277,8 @@ testPlane = undefined;
 
 //! END OF USER STORY 4 - TEST 3
 
-// ? Test 4: Test the isFull function is correct when the airport is full
-console.log(`Test 3`);
+// ? Test 4.4: Test the isFull function is correct when the airport is full
+console.log(`Test 4.4`);
 console.log(`==================`);
 console.log(
     `Test the isFull function is correct when the airport is full`
@@ -312,8 +312,8 @@ testPlane = undefined;
 // * User Story 5
 console.log(`USER STORY 5`);
 
-// ? Test 1: Test when a plane is added, that plane is in the planesAtAirport array
-console.log(`Test 1`);
+// ? Test 5.1: Test when a plane is added, that plane is in the planesAtAirport array
+console.log(`Test 5.1`);
 console.log(`==================`);
 console.log(
     `Test when a plane is added, that plane is in the planesAtAirport array`
@@ -341,8 +341,8 @@ testPlane = undefined;
 
 //! END OF USER STORY 5 - TEST 1
 
-// ? Test 2: Test that a plane which is not an instance of the Plane class cannot be added to the planesAtAirport array
-console.log(`Test 2`);
+// ? Test 5.2: Test that a plane which is not an instance of the Plane class cannot be added to the planesAtAirport array
+console.log(`Test 5.2`);
 console.log(`==================`);
 console.log(
     `Test that a plane which is not an instance of the Plane class cannot be added to the planesAtAirport array`
@@ -370,8 +370,8 @@ testPlane = undefined;
 
 //! END OF USER STORY 5 - TEST 2
 
-// ? Test 3: Test that the same plane cannot be added to the planesAtAirport array again when it is already at the airport
-console.log(`Test 3`);
+// ? Test 5.3: Test that the same plane cannot be added to the planesAtAirport array again when it is already at the airport
+console.log(`Test 5.3`);
 console.log(`==================`);
 console.log(
     `Test that the same plane cannot be added to the planesAtAirport array again when it is already at the airport`
@@ -400,8 +400,11 @@ testPlane = undefined;
 
 //! END OF USER STORY 5 - TEST 3
 
-// ? Test 4: Test that a plane which is already at the airport cannot be instructed to land
-console.log(`Test 4`);
+//* USER STORY 6
+console.log(`USER STORY 6`);
+
+// ? Test 6.1: Test that a plane which is already at the airport cannot be instructed to land
+console.log(`Test 6.1`);
 console.log(`==================`);
 console.log(
     `Test that a plane which is already at the airport cannot be instructed to land`
@@ -410,7 +413,7 @@ console.log(
 // Arrange
 testPlane = new Plane();
 airport.planesAtAirport = [testPlane];
-expected = undefined;
+expected = null;
 
 // Act
 airport.instructToLand(testPlane);
@@ -428,10 +431,10 @@ console.log(`==================`);
 afterEach();
 testPlane = undefined;
 
-//! END OF USER STORY 5 - TEST 4
+//! END OF USER STORY 6 - TEST 1
 
-// ? Test 5: Test that when a plane has landed at the airport, its isAtAirport property is changed to true
-console.log(`Test 5`);
+// ? Test 6.2: Test that when a plane has landed at the airport, its isAtAirport property is changed to true
+console.log(`Test 6.2`);
 console.log(`==================`);
 console.log(
     `Test that when a plane has landed at the airport, its isAtAirport property is changed to true`
@@ -457,10 +460,10 @@ console.log(`==================`);
 afterEach();
 testPlane = undefined;
 
-//! END OF USER STORY 5 - TEST 5
+//! END OF USER STORY 6 - TEST 2
 
-// ? Test 6: Test that a plane cannot be added to the airport when is full
-console.log(`Test 6`);
+// ? Test 6.3: Test that a plane cannot be added to the airport when is full
+console.log(`Test 6.3`);
 console.log(`==================`);
 console.log(
     `Test that a plane cannot be added to the airport when is full`
@@ -490,10 +493,10 @@ afterEach();
 testPlane1 = undefined;
 testPlane2 = undefined;
 
-//! END OF USER STORY 5 - TEST 6
+//! END OF USER STORY 6 - TEST 3
 
-// ? Test 7: Test that a plane cannot be instructed to land when the airport is full
-console.log(`Test 7`);
+// ? Test 6.4: Test that a plane cannot be instructed to land when the airport is full
+console.log(`Test 6.4`);
 console.log(`==================`);
 console.log(
     `Test that a plane cannot be instructed to land when the airport is full`
@@ -504,7 +507,7 @@ airport.capacity = 1;
 testPlane1 = new Plane();
 airport.addPlane(testPlane1);
 testPlane2 = new Plane();
-expected = false;
+expected = null;
 
 // Act
 airport.instructToLand(testPlane2);
@@ -523,13 +526,44 @@ afterEach();
 testPlane1 = undefined;
 testPlane2 = undefined;
 
-//! END OF USER STORY 5 - TEST 7
+//! END OF USER STORY 6 - TEST 4
 
-// * User Story 6
-console.log(`USER STORY 6`);
+// ? Test 6.5: Test that after a plane has been instructed to land, the instructed to land property of that plane changes to true
+console.log(`Test 6.5`);
+console.log(`==================`);
+console.log(
+    `Test that after a plane has been instructed to land, the instructed to land property of that plane changes to true`
+);
 
-// ? Test 1: Test when a plane is removed, that plane is removed from the planesAtAirport array
-console.log(`Test 1`);
+// Arrange
+testPlane = new Plane();
+airport.instructToLand(testPlane);
+airport.addPlane(testPlane);
+expected = true;
+
+// Act
+actual = testPlane.getInstructedToLand();
+
+// Assert
+result = assertEquals(expected, actual);
+
+// Report
+console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================`);
+
+// Clean Up
+afterEach();
+testPlane1 = undefined;
+testPlane2 = undefined;
+
+//! END OF USER STORY 6 - TEST 5
+
+// * User Story 7
+console.log(`USER STORY 7`);
+
+// ? Test 7.1: Test when a plane is removed, that plane is removed from the planesAtAirport array
+console.log(`Test 7.1`);
 console.log(`==================`);
 console.log(
     `Test when a plane is removed, that plane is removed from the planesAtAirport array`
@@ -559,10 +593,10 @@ afterEach();
 testPlane1 = undefined;
 testPlane2 = undefined;
 
-//! END OF USER STORY 6 - TEST 1
+//! END OF USER STORY 7 - TEST 1
 
-// ? Test 2: Test that when a plane has taken off from the airport, its isAtAirport property is changed to false
-console.log(`Test 2`);
+// ? Test 7.2: Test that when a plane has taken off from the airport, its isAtAirport property is changed to false
+console.log(`Test 7.2`);
 console.log(`==================`);
 console.log(
     `Test that when a plane has taken off from the airport, its isAtAirport property is changed to false`
@@ -589,10 +623,10 @@ console.log(`==================`);
 afterEach();
 testPlane = undefined;
 
-//! END OF USER STORY 6 - TEST 2
+//! END OF USER STORY 7 - TEST 2
 
-// ? Test 3: Test that a plane which is not at the airport cannot be instructed to take off
-console.log(`Test 3`);
+// ? Test 7.3: Test that a plane which is not at the airport cannot be instructed to take off
+console.log(`Test 7.3`);
 console.log(`==================`);
 console.log(
     `Test that a plane which is not at the airport cannot be instructed to take off`
@@ -619,4 +653,4 @@ console.log(`==================`);
 // Clean Up
 afterEach();
 
-//! END OF USER STORY 6 - TEST 3
+//! END OF USER STORY 7 - TEST 3

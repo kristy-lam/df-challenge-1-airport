@@ -1,8 +1,8 @@
 export default class Plane {
     constructor(name) {
         this.name = name;
-        this.isAtAirport = undefined;
-        this.instructedToLand = undefined;
+        this.isAtAirport = false;
+        this.instructedToLand = null;
     }
 
     getIsAtAirport() { return this.isAtAirport; };

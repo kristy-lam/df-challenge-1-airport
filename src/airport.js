@@ -4,7 +4,7 @@ export const airport = {
 
     capacity: 10,  // default capacity used for testing
 
-    modifyCapacity: function (newCapacity){
+    modifyCapacity (newCapacity){
         if (Number.isInteger(newCapacity) && newCapacity >= 0) {
             this.capacity = newCapacity;
         }
@@ -14,34 +14,30 @@ export const airport = {
 
     getPlanesAtAirport() { return planesAtAirport },
     
-    getNumOfPlanesAtAirport: function () {        
-        return this.planesAtAirport.length;
-    },
+    getNumOfPlanesAtAirport () { return this.planesAtAirport.length },
     
-    isFull: function () {
-        return this.planesAtAirport.length === this.capacity;
-    },    
-
-    addPlane: function (plane) {
+    isFull() { return this.planesAtAirport.length === this.capacity },    
+    
+    addPlane(plane) {
         if (plane instanceof Plane && !this.planesAtAirport.includes(plane) && !(this.isFull())) {
             plane.isAtAirport = true;
             this.planesAtAirport.push(plane);
         }
     },
 
-    removePlane: function (plane) {
+    removePlane(plane) {
         plane.isAtAirport = false;
         const planeIndex = this.planesAtAirport.indexOf(plane);
         this.planesAtAirport.splice(planeIndex, 1);
     },
 
-    instructToLand: function (plane) {
-        if ((!this.planesAtAirport.includes(plane))) {
+    instructToLand(plane) {
+        if ((!this.planesAtAirport.includes(plane)) && (!this.isFull)) {
             plane.instructedToLand = true;
         }
     },
 
-    instructToTakeOff: function (plane) {
+    instructToTakeOff(plane) {
         if (this.planesAtAirport.includes(plane)) {
             plane.instructedToTakeOff = true;
         }
