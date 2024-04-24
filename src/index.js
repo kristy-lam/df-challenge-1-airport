@@ -60,8 +60,8 @@ const testPlane4 = new Plane();
 airport.instructToLand(testPlane4);
 airport.addPlane(testPlane4);
 
-console.log(chalk.green(`Air traffic control tries to instruct Test Plane 4 to land:`));
-console.log(`Test Plane 4 receives instruction to land: ${testPlane4.instructedToLand}.`);
+console.log(chalk.green(`Air traffic control tries to instruct Test Plane 4 to land (when the airport is full):`));
+console.log(`Test Plane 4 receives instruction to land: ${testPlane4.getInstructedToLand()}.`);
 console.log(`Test Plane 4 is at the airport: ${testPlane4.getIsAtAirport()}.`);
 console.log(`The number of planes at the airport is ${airport.getNumOfPlanesAtAirport()}.`);
 console.log(`The airport is full: ${airport.isFull()}.`);
