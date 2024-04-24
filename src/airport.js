@@ -19,8 +19,9 @@ export const airport = {
     isFull() { return this.planesAtAirport.length === this.capacity },    
     
     addPlane(plane) {
-        if (plane instanceof Plane && !this.planesAtAirport.includes(plane) && !(this.isFull())) {
+        if (plane instanceof Plane && !this.planesAtAirport.includes(plane) && !this.isFull()) {
             plane.isAtAirport = true;
+            plane.instructedToLand = null;
             this.planesAtAirport.push(plane);
         }
     },
@@ -32,7 +33,7 @@ export const airport = {
     },
 
     instructToLand(plane) {
-        if ((!this.planesAtAirport.includes(plane)) && (!this.isFull)) {
+        if (!this.planesAtAirport.includes(plane) && !this.isFull()) {
             plane.instructedToLand = true;
         }
     },

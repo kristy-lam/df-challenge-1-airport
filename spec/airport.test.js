@@ -537,10 +537,10 @@ console.log(
 
 // Arrange
 testPlane = new Plane();
-airport.instructToLand(testPlane);
 expected = true;
 
 // Act
+airport.instructToLand(testPlane);
 actual = testPlane.getInstructedToLand();
 
 // Assert
@@ -553,8 +553,7 @@ console.log(`==================`);
 
 // Clean Up
 afterEach();
-testPlane1 = undefined;
-testPlane2 = undefined;
+testPlane = undefined;
 
 //! END OF USER STORY 6 - TEST 5
 
@@ -569,10 +568,10 @@ console.log(
 // Arrange
 testPlane = new Plane();
 airport.instructToLand(testPlane);
-airport.addPlane(testPlane);
 expected = null;
 
 // Act
+airport.addPlane(testPlane);
 actual = testPlane.getInstructedToLand();
 
 // Assert
@@ -585,8 +584,7 @@ console.log(`==================`);
 
 // Clean Up
 afterEach();
-testPlane1 = undefined;
-testPlane2 = undefined;
+testPlane = undefined;
 
 //! END OF USER STORY 6 - TEST 6
 
