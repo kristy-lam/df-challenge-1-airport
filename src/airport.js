@@ -28,6 +28,7 @@ export const airport = {
 
     removePlane(plane) {
         plane.isAtAirport = false;
+        plane.instructedToTakeOff = null;
         const planeIndex = this.planesAtAirport.indexOf(plane);
         this.planesAtAirport.splice(planeIndex, 1);
     },
