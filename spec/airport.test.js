@@ -711,5 +711,37 @@ console.log(`==================`);
 
 // Clean Up
 afterEach();
+testPlane = undefined;
 
 //! END OF USER STORY 7 - TEST 4
+
+// ? Test 7.5: Test that when a plane has taken off, the instructed to take off property of that plane returns to null
+console.log(`Test 7.5`);
+console.log(`==================`);
+console.log(
+    `Test that when a plane has taken off, the instructed to take off property of that plane returns to null`
+);
+
+// Arrange
+testPlane = new Plane();
+airport.addPlane(testPlane);
+airport.instructToTakeOff(testPlane);
+airport.removePlane(testPlane);
+expected = null;
+
+// Act
+actual = testPlane.getInstructedToTakeOff();
+
+// Assert
+result = assertEquals(expected, actual);
+
+// Report
+console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================`);
+
+// Clean Up
+afterEach();
+testPlane = undefined;
+
+//! END OF USER STORY 7 - TEST 5
