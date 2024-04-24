@@ -492,6 +492,39 @@ testPlane2 = undefined;
 
 //! END OF USER STORY 5 - TEST 6
 
+// ? Test 7: Test that a plane cannot be instructed to land when the airport is full
+console.log(`Test 7`);
+console.log(`==================`);
+console.log(
+    `Test that a plane cannot be instructed to land when the airport is full`
+);
+
+// Arrange
+airport.capacity = 1;
+testPlane1 = new Plane();
+airport.addPlane(testPlane1);
+testPlane2 = new Plane();
+expected = false;
+
+// Act
+airport.instructToLand(testPlane2);
+actual = testPlane2.getInstructedToLand();
+
+// Assert
+result = assertEquals(expected, actual);
+
+// Report
+console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================`);
+
+// Clean Up
+afterEach();
+testPlane1 = undefined;
+testPlane2 = undefined;
+
+//! END OF USER STORY 5 - TEST 7
+
 // * User Story 6
 console.log(`USER STORY 6`);
 

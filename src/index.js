@@ -45,4 +45,26 @@ console.log(`Test Plane 1 is at the airport: ${testPlane1.getIsAtAirport()}.`);
 console.log(`The number of planes at the airport is ${airport.getNumOfPlanesAtAirport()}.`);
 console.log(`The airport is full: ${airport.isFull()}.`);
 console.log(`--------------------`);
+
+const testPlane3 = new Plane();
+airport.instructToLand(testPlane3);
+airport.addPlane(testPlane3);
+
+console.log(chalk.green(`After Test Plane 3 has landed:`));
+console.log(`Test Plane 3 is at the airport: ${testPlane3.getIsAtAirport()}.`);
+console.log(`The number of planes at the airport is ${airport.getNumOfPlanesAtAirport()}.`);
+console.log(`The airport is full: ${airport.isFull()}.`);
+console.log(`--------------------`);
+
+const testPlane4 = new Plane();
+airport.instructToLand(testPlane4);
+airport.addPlane(testPlane4);
+
+console.log(chalk.green(`Air traffic control tries to instruct Test Plane 4 to land:`));
+console.log(`Test Plane 4 receives instruction to land: ${testPlane4.instructedToLand}.`);
+console.log(`Test Plane 4 is at the airport: ${testPlane4.getIsAtAirport()}.`);
+console.log(`The number of planes at the airport is ${airport.getNumOfPlanesAtAirport()}.`);
+console.log(`The airport is full: ${airport.isFull()}.`);
+
+console.log(`====================`);
 console.log(chalk.blue(`END OF CODE`));

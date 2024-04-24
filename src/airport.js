@@ -12,6 +12,8 @@ export const airport = {
 
     planesAtAirport: [],
 
+    getPlanesAtAirport() { return planesAtAirport },
+    
     getNumOfPlanesAtAirport: function () {        
         return this.planesAtAirport.length;
     },

@@ -5,7 +5,8 @@ export default class Plane {
         this.instructedToLand = undefined;
     }
 
-    getIsAtAirport () {
-        return this.isAtAirport;
-    }
+    getIsAtAirport() { return this.isAtAirport; };
+
+    getInstructedToLand() { return this.instructedToLand };
+    
 };
