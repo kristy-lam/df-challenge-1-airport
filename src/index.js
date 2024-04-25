@@ -5,15 +5,15 @@ import Plane from "./Plane.js";
 console.log(chalk.blue(`PRODUCTION CODE`));
 console.log(`====================`);
 
-const oldCapacity = airport.capacity;
-airport.modifyCapacity(2);
-const newCapacity = airport.capacity;
-console.log(`Airport capacity modified from ${oldCapacity} to ${newCapacity}.`);
+const oldMaxCapacity = airport.getMaxCapacity();
+airport.modifyMaxCapacity(2);
+const newMaxCapacity = airport.getMaxCapacity();
+console.log(`Airport capacity modified from ${oldMaxCapacity} to ${newMaxCapacity}.`);
 console.log(`--------------------`);
 
 console.log(chalk.green(`Before Test Plane 1 landed:`));
 
-const testPlane1 = new Plane();
+const testPlane1 = new Plane('testPlane1');
 console.log(`Test Plane 1 is at the airport: ${testPlane1.getIsAtAirport()}.`);
 console.log(`The number of planes at the airport is ${airport.getNumOfPlanesAtAirport()}.`);
 console.log(`--------------------`);
@@ -27,7 +27,7 @@ console.log(`The number of planes at the airport is ${airport.getNumOfPlanesAtAi
 console.log(`The airport is full: ${airport.isFull()}.`);
 console.log(`--------------------`);
 
-const testPlane2 = new Plane();
+const testPlane2 = new Plane('testPlane2');
 airport.instructToLand(testPlane2);
 airport.addPlane(testPlane2);
 
@@ -46,7 +46,7 @@ console.log(`The number of planes at the airport is ${airport.getNumOfPlanesAtAi
 console.log(`The airport is full: ${airport.isFull()}.`);
 console.log(`--------------------`);
 
-const testPlane3 = new Plane();
+const testPlane3 = new Plane('testPlane3');
 airport.instructToLand(testPlane3);
 airport.addPlane(testPlane3);
 
@@ -56,7 +56,7 @@ console.log(`The number of planes at the airport is ${airport.getNumOfPlanesAtAi
 console.log(`The airport is full: ${airport.isFull()}.`);
 console.log(`--------------------`);
 
-const testPlane4 = new Plane();
+const testPlane4 = new Plane('testPlane4');
 airport.instructToLand(testPlane4);
 airport.addPlane(testPlane4);
 
@@ -67,4 +67,4 @@ console.log(`The number of planes at the airport is ${airport.getNumOfPlanesAtAi
 console.log(`The airport is full: ${airport.isFull()}.`);
 
 console.log(`====================`);
-console.log(chalk.blue(`END OF CODE`));
+console.log(chalk.blue(`END OF CODE DEMONSTRATION`));

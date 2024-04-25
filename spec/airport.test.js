@@ -8,7 +8,7 @@ const afterEach = () => {
     expected = undefined;
     actual = undefined;
     result = undefined;
-    airport.capacity = 10;  // Back to default capacity
+    airport.maxCapacity = 10;  // Back to default maximum capacity
     airport.planesAtAirport = [];
 };
 
@@ -28,7 +28,7 @@ let expected = true;
 let actual, result;
 
 // Act
-actual = Object.hasOwn(airport, 'capacity');
+actual = Object.hasOwn(airport, 'maxCapacity');
 
 // Assert
 result = assertEquals(expected, actual);
@@ -46,20 +46,20 @@ afterEach();
 // * User Story 2
 console.log(`USER STORY 2.1`);
 
-// ? Test 1.2: Test that capacity can be modified accordingly
+// ? Test 1.2: Test that maximum capacity can be modified accordingly
 console.log(`Test 1`);
 console.log(`==================`);
 console.log(
-    `Test that capacity can be modified accordingly`
+    `Test that maximum capacity can be modified accordingly`
 );
 
 // Arrange
 expected = 20;
-let testCapacity = 20;
+let testMaxCapacity = 20;
 
 // Act
-airport.modifyCapacity(testCapacity);
-actual = airport.capacity;
+airport.modifyMaxCapacity(testMaxCapacity);
+actual = airport.getMaxCapacity();
 
 // Assert
 result = assertEquals(expected, actual);
@@ -71,24 +71,24 @@ console.log(`==================`);
 
 // Clean Up
 afterEach();
-testCapacity = undefined;
+testMaxCapacity = undefined;
 
 //! END OF USER STORY 2 - TEST 1
 
-// ? Test 2.2: Test that only a number can only be used as capacity
+// ? Test 2.2: Test that only a number can only be used as maximum capacity
 console.log(`Test 2.2`);
 console.log(`==================`);
 console.log(
-    `Test that only a number can only be used as capacity`
+    `Test that only a number can only be used as maximum capacity`
 );
 
 // Arrange
 expected = 10;
-testCapacity = "fifteen";
+testMaxCapacity = "fifteen";
 
 // Act
-airport.modifyCapacity(testCapacity);
-actual = airport.capacity;
+airport.modifyMaxCapacity(testMaxCapacity);
+actual = airport.getMaxCapacity();
 
 // Assert
 result = assertEquals(expected, actual);
@@ -100,24 +100,24 @@ console.log(`==================`);
 
 // Clean Up
 afterEach();
-testCapacity = undefined;
+testMaxCapacity = undefined;
 
 //! END OF USER STORY 2 - TEST 2
 
-// ? Test 2.3: Test that only a positive number can only be used as capacity
+// ? Test 2.3: Test that only a positive number can only be used as maximum capacity
 console.log(`Test 2.3`);
 console.log(`==================`);
 console.log(
-    `Test that only a positive number can only be used as capacity`
+    `Test that only a positive number can only be used as maximum capacity`
 );
 
 // Arrange
 expected = 10;
-testCapacity = -8;
+testMaxCapacity = -8;
 
 // Act
-airport.modifyCapacity(testCapacity);
-actual = airport.capacity;
+airport.modifyMaxCapacity(testMaxCapacity);
+actual = airport.maxCapacity;
 
 // Assert
 result = assertEquals(expected, actual);
@@ -129,7 +129,7 @@ console.log(`==================`);
 
 // Clean Up
 afterEach();
-testCapacity = undefined;
+testMaxCapacity = undefined;
 
 //! END OF USER STORY 2 - TEST 3
 
@@ -470,7 +470,7 @@ console.log(
 );
 
 // Arrange
-airport.capacity = 1;
+airport.maxCapacity = 1;
 let testPlane1 = new Plane();
 airport.addPlane(testPlane1);
 let testPlane2 = new Plane();
@@ -503,7 +503,7 @@ console.log(
 );
 
 // Arrange
-airport.capacity = 1;
+airport.maxCapacity = 1;
 testPlane1 = new Plane();
 airport.addPlane(testPlane1);
 testPlane2 = new Plane();

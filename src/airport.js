@@ -2,21 +2,21 @@ import Plane from '../src/Plane.js';
 
 export const airport = {    
 
-    capacity: 10,  // default capacity used for testing
+    maxCapacity: 10,  // default capacity used for testing
 
-    modifyCapacity (newCapacity){
-        if (Number.isInteger(newCapacity) && newCapacity >= 0) {
-            this.capacity = newCapacity;
+    getMaxCapacity() { return this.maxCapacity },
+    
+    modifyMaxCapacity (newMaxCapacity){
+        if (Number.isInteger(newMaxCapacity) && newMaxCapacity >= 0) {
+            this.maxCapacity = newMaxCapacity;
         }
     },
 
     planesAtAirport: [],
-
-    getPlanesAtAirport() { return planesAtAirport },
     
     getNumOfPlanesAtAirport () { return this.planesAtAirport.length },
     
-    isFull() { return this.planesAtAirport.length === this.capacity },    
+    isFull() { return this.planesAtAirport.length === this.maxCapacity },    
     
     addPlane(plane) {
         if (plane instanceof Plane && !this.planesAtAirport.includes(plane) && !this.isFull()) {
