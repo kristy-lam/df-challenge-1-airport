@@ -36,7 +36,6 @@ In light of the client's requirements, seven user stories have been identified. 
 
 ![Domain Model for User Story 4](image-dm4.png)
 
-
 | No.      | Test                                                                                                    |
 | -------- | ------------------------------------------------------------------------------------------------------- |
 | Test 4.1 | Test the getNumOfPlanesAtAirport function correctly shows the number of planes currently at the airport |
@@ -47,7 +46,6 @@ In light of the client's requirements, seven user stories have been identified. 
 **5. As an air traffic controller, I want the system to update the planes at the airport after a plane has landed, so that the number of planes currently at the airport will be updated accurately.**
 
 ![Domain Model for User Story 5](image-dm5.png)
-
 
 | No.      | Test                                                                                                          |
 | -------- | ------------------------------------------------------------------------------------------------------------- |

@@ -745,3 +745,29 @@ afterEach();
 testPlane = undefined;
 
 //! END OF USER STORY 7 - TEST 5
+
+// * User Story 8
+console.log(`USER STORY 8`);
+
+// ? Test 8.1: should be able to get current weather condition
+console.log(`Test 8.1`);
+console.log(`==================`);
+console.log(
+    `should be able to get current weather condition`
+);
+
+// Arrange
+expected = 'stormy';
+
+// Act
+actual = WeatherChecker.getCurrentWeather();
+
+// Assert
+result = assertEquals(expected, actual);
+
+// Report
+console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================`);
+
+//! END OF USER STORY 8 - TEST 1
