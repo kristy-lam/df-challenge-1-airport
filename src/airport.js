@@ -41,7 +41,7 @@ export const airport = {
     },
 
     instructToTakeOff(plane) {
-        if (this.planesAtAirport.includes(plane)) {
+        if (this.planesAtAirport.includes(plane) && (WeatherChecker.getCurrentWeather() !== 'stormy')) {
             plane.instructedToTakeOff = true;
         }
     }
