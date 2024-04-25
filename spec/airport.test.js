@@ -761,6 +761,7 @@ console.log(
 expected = 'stormy';
 
 // Act
+WeatherChecker.setCurrentWeather('stormy');
 actual = WeatherChecker.getCurrentWeather();
 
 // Assert
@@ -803,5 +804,5 @@ console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
 !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
 console.log(`==================`);
 
-//! END OF USER STORY 8 - TEST 1
+//! END OF USER STORY 9 - TEST 1
 

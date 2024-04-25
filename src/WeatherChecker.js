@@ -1,6 +1,6 @@
 export default class WeatherChecker {
 
-    static #currentWeather = 'stormy';
+    static #currentWeather = undefined;
 
     // Setter for testing only
     static setCurrentWeather = weather => { WeatherChecker.#currentWeather = weather };

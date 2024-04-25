@@ -1,4 +1,5 @@
 import Plane from '../src/Plane.js';
+import WeatherChecker from './WeatherChecker.js';
 
 export const airport = {    
 
@@ -34,7 +35,7 @@ export const airport = {
     },
 
     instructToLand(plane) {
-        if (!this.planesAtAirport.includes(plane) && !this.isFull()) {
+        if (!this.planesAtAirport.includes(plane) && !this.isFull() && (WeatherChecker.getCurrentWeather() !== 'stormy')) {
             plane.instructedToLand = true;
         }
     },
