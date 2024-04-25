@@ -804,5 +804,39 @@ console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
 !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
 console.log(`==================`);
 
+// Clean Up
+afterEach();
+testPlane = undefined;
+
 //! END OF USER STORY 9 - TEST 1
+
+// ? Test 9.2: should allow user to instruct a plane to land if weather is not stormy
+console.log(`Test 9.2`);
+console.log(`==================`);
+console.log(
+    `should allow user to instruct a plane to land if weather is not stormy`
+);
+
+// Arrange
+WeatherChecker.setCurrentWeather('not stormy');
+testPlane = new Plane();
+expected = true;
+
+// Act
+airport.instructToLand(testPlane);
+actual = testPlane.getInstructedToLand();
+
+// Assert
+result = assertEquals(expected, actual);
+
+// Report
+console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================`);
+
+// Clean Up
+afterEach();
+testPlane = undefined;
+
+//! END OF USER STORY 9 - TEST 2
 
