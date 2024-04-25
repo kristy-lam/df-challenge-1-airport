@@ -771,4 +771,37 @@ console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
 !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
 console.log(`==================`);
 
+// Clean Up
+afterEach();
+
 //! END OF USER STORY 8 - TEST 1
+
+// * User Story 9
+console.log(`USER STORY 9`);
+
+// ? Test 9.1: should not allow user to instruct a plane to land if weather is stormy
+console.log(`Test 9.1`);
+console.log(`==================`);
+console.log(
+    `should not allow user to instruct a plane to land if weather is stormy`
+);
+
+// Arrange
+WeatherChecker.setCurrentWeather('stormy');
+testPlane = new Plane();
+expected = null;
+
+// Act
+airport.instructToLand(testPlane);
+actual = testPlane.getInstructedToLand();
+
+// Assert
+result = assertEquals(expected, actual);
+
+// Report
+console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================`);
+
+//! END OF USER STORY 8 - TEST 1
+
