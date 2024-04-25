@@ -873,7 +873,70 @@ console.log(`==================`);
 // Clean Up
 afterEach();
 testPlane = undefined;
-WeatherChecker.setCurrentWeather('undefined');
+WeatherChecker.setCurrentWeather(undefined);
 
 //! END OF USER STORY 10 - TEST 1
+
+// ? Test 10.2: should allow user to instruct a plane to take off if weather is not stormy
+console.log(`Test 10.2`);
+console.log(`==================`);
+console.log(
+    `should allow user to instruct a plane to take off if weather is not stormy`
+);
+
+// Arrange
+testPlane = new Plane();
+airport.addPlane(testPlane);
+WeatherChecker.setCurrentWeather('not stormy');
+expected = true;
+
+// Act
+airport.instructToTakeOff(testPlane);
+actual = testPlane.getInstructedToTakeOff();
+
+// Assert
+result = assertEquals(expected, actual);
+
+// Report
+console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================`);
+
+// Clean Up
+afterEach();
+testPlane = undefined;
+WeatherChecker.setCurrentWeather(undefined);
+
+//! END OF USER STORY 10 - TEST 2
+
+// ? Test 10.3: should allow user to instruct a plane to take off if weather is undefined
+console.log(`Test 10.3`);
+console.log(`==================`);
+console.log(
+    `should allow user to instruct a plane to take off if weather is undefined`
+);
+
+// Arrange
+testPlane = new Plane();
+airport.addPlane(testPlane);
+expected = null;
+
+// Act
+airport.instructToTakeOff(testPlane);
+actual = testPlane.getInstructedToTakeOff();
+
+// Assert
+result = assertEquals(expected, actual);
+
+// Report
+console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================`);
+
+// Clean Up
+afterEach();
+testPlane = undefined;
+WeatherChecker.setCurrentWeather(undefined);
+
+//! END OF USER STORY 10 - TEST 3
 
