@@ -1,5 +1,6 @@
 import airport from "../src/airport.js";
 import Plane from "../src/Plane.js";
+import WeatherChecker from "../src/WeatherChecker.js";
 import { assertEquals } from "../spec/test-framework.js";
 import chalk from "chalk";
 
