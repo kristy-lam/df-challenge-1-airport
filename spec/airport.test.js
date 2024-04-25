@@ -758,6 +758,7 @@ console.log(
 );
 
 // Arrange
+WeatherChecker.setCurrentWeather(undefined);
 expected = 'stormy';
 
 // Act
@@ -774,6 +775,7 @@ console.log(`==================`);
 
 // Clean Up
 afterEach();
+WeatherChecker.setCurrentWeather(undefined);
 
 //! END OF USER STORY 8 - TEST 1
 
@@ -812,7 +814,7 @@ WeatherChecker.setCurrentWeather(undefined);
 //! END OF USER STORY 9 - TEST 1
 
 // ? Test 9.2: should allow user to instruct a plane to land if weather is not stormy
-console.log(`Test 9.2`);
+console.log(`Test 9.2 (Copilot suggestion)`);
 console.log(`==================`);
 console.log(
     `should allow user to instruct a plane to land if weather is not stormy`
@@ -841,6 +843,39 @@ testPlane = undefined;
 WeatherChecker.setCurrentWeather(undefined);
 
 //! END OF USER STORY 9 - TEST 2
+
+// ? Test 9.3: should not allow user to instruct a plane to land if weather is undefined
+console.log(`Test 9.3 (Copilot suggestion)`);
+console.log(`==================`);
+console.log(
+    `should not allow user to instruct a plane to land if weather is undefined`
+);
+
+// Arrange
+testPlane = new Plane();
+
+// Plane should not land because it is assumed that there may be 
+// an issue with the WeatherChecker if the current weather is undefined
+expected = null;
+
+// Act
+airport.instructToLand(testPlane);
+actual = testPlane.getInstructedToLand();
+
+// Assert
+result = assertEquals(expected, actual);
+
+// Report
+console.log(result ? chalk.green(`Pass`) : chalk.red(`Fail`));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================`);
+
+// Clean Up
+afterEach();
+testPlane = undefined;
+WeatherChecker.setCurrentWeather(undefined);
+
+//! END OF USER STORY 9 - TEST 3
 
 // * User Story 10
 console.log(`USER STORY 10`);
@@ -878,7 +913,7 @@ WeatherChecker.setCurrentWeather(undefined);
 //! END OF USER STORY 10 - TEST 1
 
 // ? Test 10.2: should allow user to instruct a plane to take off if weather is not stormy
-console.log(`Test 10.2`);
+console.log(`Test 10.2 (Copilot suggestion)`);
 console.log(`==================`);
 console.log(
     `should allow user to instruct a plane to take off if weather is not stormy`
@@ -909,16 +944,19 @@ WeatherChecker.setCurrentWeather(undefined);
 
 //! END OF USER STORY 10 - TEST 2
 
-// ? Test 10.3: should allow user to instruct a plane to take off if weather is undefined
-console.log(`Test 10.3`);
+// ? Test 10.3: should not allow user to instruct a plane to take off if weather is undefined
+console.log(`Test 10.3 (Copilot suggestion)`);
 console.log(`==================`);
 console.log(
-    `should allow user to instruct a plane to take off if weather is undefined`
+    `should not allow user to instruct a plane to take off if weather is undefined`
 );
 
 // Arrange
 testPlane = new Plane();
 airport.addPlane(testPlane);
+
+// Plane should not take off because it is assumed that there may be 
+// an issue with the WeatherChecker if the current weather is undefined
 expected = null;
 
 // Act
@@ -939,4 +977,3 @@ testPlane = undefined;
 WeatherChecker.setCurrentWeather(undefined);
 
 //! END OF USER STORY 10 - TEST 3
-

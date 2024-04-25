@@ -35,13 +35,13 @@ export const airport = {
     },
 
     instructToLand(plane) {
-        if (!this.planesAtAirport.includes(plane) && !this.isFull() && (WeatherChecker.getCurrentWeather() !== 'stormy')) {
+        if (!this.planesAtAirport.includes(plane) && !this.isFull() && WeatherChecker.getCurrentWeather() !== 'stormy' && WeatherChecker.getCurrentWeather() !== undefined) {
             plane.instructedToLand = true;
         }
     },
 
     instructToTakeOff(plane) {
-        if (this.planesAtAirport.includes(plane) && (WeatherChecker.getCurrentWeather() !== 'stormy')) {
+        if (this.planesAtAirport.includes(plane) && WeatherChecker.getCurrentWeather() !== 'stormy' && WeatherChecker.getCurrentWeather() !== undefined) {
             plane.instructedToTakeOff = true;
         }
     }

@@ -6,7 +6,7 @@ In light of the client's requirements, seven user stories have been identified. 
 
 **1. As an air traffic director, I want to have a representation of the airport's maximum capacity of the number of planes that can be at the airport in the software, so that I can ensure safety at the airport.**
 
-![Domain Model for User Story 1](image-dm1.png)
+![Domain Model for User Story 1](image-dm01.png)
 
 | No.      | Test                                           |
 | -------- | ---------------------------------------------- |
@@ -14,7 +14,7 @@ In light of the client's requirements, seven user stories have been identified. 
 
 **2. As an air traffic director, I want to be able to modify the capacity as appropriate, so that it can be changed in response to different scenarios, e.g. closure of runway.**
 
-![Domain Model for User Story 2](image-dm2.png)
+![Domain Model for User Story 2](image-dm02.png)
 
 | No.      | Test                                                          |
 | -------- | ------------------------------------------------------------- |
@@ -24,8 +24,7 @@ In light of the client's requirements, seven user stories have been identified. 
 
 **3. As an air traffic controller, I want to be able to check whether a plane is at the airport, so that I will know whether I need to instruct the plane regarding whether it can land at the airport.
 
-![Domain Model for User Story 3](image-dm3.png)
-
+![Domain Model for User Story 3](image-dm03.png)
 
 | No.      | Test                                                            |
 | -------- | --------------------------------------------------------------- |
@@ -34,7 +33,7 @@ In light of the client's requirements, seven user stories have been identified. 
 
 **4. As an air traffic controller, I want to be able to check whether the airport is full, so that I will know whether I can instruct a plane which is not already at the airport can land.**
 
-![Domain Model for User Story 4](image-dm4.png)
+![Domain Model for User Story 4](image-dm04.png)
 
 | No.      | Test                                                                                                    |
 | -------- | ------------------------------------------------------------------------------------------------------- |
@@ -45,7 +44,7 @@ In light of the client's requirements, seven user stories have been identified. 
 
 **5. As an air traffic controller, I want the system to update the planes at the airport after a plane has landed, so that the number of planes currently at the airport will be updated accurately.**
 
-![Domain Model for User Story 5](image-dm5.png)
+![Domain Model for User Story 5](image-dm05.png)
 
 | No.      | Test                                                                                                          |
 | -------- | ------------------------------------------------------------------------------------------------------------- |
@@ -55,7 +54,7 @@ In light of the client's requirements, seven user stories have been identified. 
 
 **6. As an air traffic controller, I want to be able to instruct a plane which is not at the airport to land if the airport is not full, so that the plane can land.**
 
-![Domain Model for User Story 6](image-dm6.png)
+![Domain Model for User Story 6](image-dm06.png)
 
 | No.      | Test                                                                                                               |
 | -------- | ------------------------------------------------------------------------------------------------------------------ |
@@ -68,7 +67,7 @@ In light of the client's requirements, seven user stories have been identified. 
 
 **7. As an air traffic controller, I want to be able to instruct a plane which is at the airport to take off, so that the plane can leave.**
 
-![Domain Model for User Story 7](image-dm7.png)
+![Domain Model for User Story 7](image-dm07.png)
 
 | No.      | Test                                                                                                                |
 | -------- | ------------------------------------------------------------------------------------------------------------------- |
@@ -78,3 +77,30 @@ In light of the client's requirements, seven user stories have been identified. 
 | Test 7.4 | Test that when a plane is instructed to take off, the instructed to take off property of that plane changes to true |
 | Test 7.5 | Test that when a plane has taken off, the instructed to take off property of that plane returns to null             |
 
+1. As an air traffic controller, I want to be able to check the current weather, so that I will know whether I should instruct a plane to land or take off.
+
+![Domain Model for User Story 8](image-dm08.png)
+
+| No.      | Test                                            |
+| -------- | ----------------------------------------------- |
+| Test 8.1 | should be able to get current weather condition |
+
+9.  As an air traffic controller, I want the system to not allow me to instruct a plane to land when the weather is stormy, so that the plane will not land in a dangerous situation.
+
+![Domain Model for User Story 9](image-dm09.png)
+
+| No.      | Test                                                                      |
+| -------- | ------------------------------------------------------------------------- |
+| Test 9.1 | should not allow user to instruct a plane to land if weather is stormy    |
+| Test 9.2 | should allow user to instruct a plane to land if weather is not stormy    |
+| Test 9.3 | should not allow user to instruct a plane to land if weather is undefined |
+
+10. As an air traffic controller, I want the system to not allow me to instruct a plane to take off when the weather is stormy, so that the plane will not take off in a dangerous situation.
+
+![Domain Model for User Story 10](image-dm10.png)
+
+| No.       | Test                                                                          |
+| --------- | ----------------------------------------------------------------------------- |
+| Test 10.1 | should not allow user to instruct a plane to take off if weather is stormy    |
+| Test 10.2 | should allow user to instruct a plane to take off if weather is not stormy    |
+| Test 10.3 | should not allow user to instruct a plane to take off if weather is undefined |

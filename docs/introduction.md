@@ -1,5 +1,6 @@
 # Introduction - Airport Control Programme
 
+
 ## Purpose and Benefits
 
 This software programme is created for the Air Traffic Control Team to control the flow of planes at the airport. The use of the programme in managing air traffic flying to and from the airport helps in minimizing human errors with built-in restrictions. The current situation at the airport is reflected in the programme as soon as circumstances change, including a change in the airport's maximum capacity, planes landing and taking off, etc., so that the Team will be able to react immediately. The benefits can be summarized below:
@@ -17,18 +18,22 @@ The programme assists the Director of the Air Traffic Control Team in managing t
 
 The commands available for use in the programme are explained below:
 
-| Command                                     | Parameters (see *italics* in Command)                 | Use of Command                                                      | Conditions of Use                                                             |
-| ------------------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| airport.getMaxCapacity()                    | Nil                                                   | Check maximum capacity of the airport                               | Nil                                                                           |
-| airport.modifyMaxCapacity(*newMaxCapacity*) | Input newMaxCapacity (in number, e.g. 20) in brackets | Modify maximum capacity of the airport                              | Nil                                                                           |
-| airport.getNumOfPlanesAtAirport()           | Nil                                                   | Check how many planes are at the airport                            | Nil                                                                           |
-| *plane*.getIsAtAirport()                    | Plane to be changed to the target plane               | Check whether the target plane is at the airport                    | Nil                                                                           |
-| airport.instructToLand(*plane*)             | Plane to be changed to the target plane in brackets   | Instruct the target plane to land                                   | The target plane must not be at the airport, and the airport must not be full |
-| *plane*.getIntructedToLand()                | Plane to be changed to the target plane               | Check whether the target plane has received instruction to land     | Nil                                                                           |
-| airport.addPlane(*plane*)                   | Plane to be changed to the target plane in brackets   | Add the target plane to the airport when it has landed              | The target plane must not be at the airport, and the airport must not be full |
-| airport.instructToTakeOff(*plane*)          | Plane to be changed to the target plane in brackets   | Instruct the target plane to take off                               | The target plane must be at the airport                                       |
-| *plane*.getIntructedToTakeOff()             | Plane to be changed to the target plane               | Check whether the target plane has received instruction to take off | Nil                                                                           |
-| airport.removePlane(*plane*)                | Plane to be changed to the target plane in brackets   | Remove the target plane from the airport when it has taken off      | The target plane must be at the airport                                       |
+| Command                                     | Parameters (see *italics* in Command)                 | Use of Command                                                      | Conditions of Use                                                                                                            |
+| ------------------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| airport.getMaxCapacity()                    | Nil                                                   | Check maximum capacity of the airport                               | Nil                                                                                                                          |
+| airport.modifyMaxCapacity(*newMaxCapacity*) | Input newMaxCapacity (in number, e.g. 20) in brackets | Modify maximum capacity of the airport                              | Nil                                                                                                                          |
+| airport.getNumOfPlanesAtAirport()           | Nil                                                   | Check how many planes are at the airport                            | Nil                                                                                                                          |
+| *plane*.getIsAtAirport()                    | Plane to be changed to the target plane               | Check whether the target plane is at the airport                    | Nil                                                                                                                          |
+| airport.instructToLand(*plane*)             | Plane to be changed to the target plane in brackets   | Instruct the target plane to land                                   | The target plane must not be at the airport, the airport must not be full, **and the weather must not be stormy or undefined |
+| *plane*.getInstructedToLand()               | Plane to be changed to the target plane               | Check whether the target plane has received instruction to land     | Nil                                                                                                                          |
+| airport.addPlane(*plane*)                   | Plane to be changed to the target plane in brackets   | Add the target plane to the airport when it has landed              | The target plane must not be at the airport, and the airport must not be full                                                |
+| airport.instructToTakeOff(*plane*)          | Plane to be changed to the target plane in brackets   | Instruct the target plane to take off                               | The target plane must be at the airport, **and the weather must not be stormy or undefined                                   |
+| *plane*.getInstructedToTakeOff()            | Plane to be changed to the target plane               | Check whether the target plane has received instruction to take off | Nil                                                                                                                          |
+| airport.removePlane(*plane*)                | Plane to be changed to the target plane in brackets   | Remove the target plane from the airport when it has taken off      | The target plane must be at the airport                                                                                      |
+| ** WeatherChecker.getCurrentWeather()       | Nil                                                   | Check current weather condition                                     |                                                                                                                              |
+
+*Note: Items starting with ** are features added for the additional tasks.*
+
 
 ## Risks
 

@@ -1,10 +1,12 @@
 # Evidence of Using Copilot
 
-- Asking Copilot to suggest edge cases for User Story 9: As an air traffic controller, I want the system to not allow me to instruct a plane to land when the weather is stormy, so that the plane will not land in a dangerous situation.
+- Asking Copilot to suggest edge cases
+- The suggestion in relation to **'not stormy'** weather is tested (tests 9.2 & 10.2)
 
 ![Copilot edge case suggestions for tests on User Story 9](copilot1.png)
 
-- Asking Copilot to suggest corner cases in relation to landing or taking off under stormy weather
+- Asking Copilot to suggest corner cases (though not sure the suggestions are corner cases, should still be edge cases)
+- The suggestion in relation to **'undefined'** weather is tested (tests 9.3 & 10.3)
 
 *See question highlighted*
 ![Copilot suggestions on corner cases: question asked](copilot2-q.png)

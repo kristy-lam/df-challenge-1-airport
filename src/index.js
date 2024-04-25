@@ -2,6 +2,9 @@ import chalk from "chalk";
 import airport from "./airport.js";
 import Plane from "./Plane.js";
 
+// For additional tasks
+import WeatherChecker from "./WeatherChecker.js";
+
 console.log(chalk.blue(`PRODUCTION CODE`));
 console.log(`====================`);
 
@@ -68,3 +71,38 @@ console.log(`The airport is full: ${airport.isFull()}.`);
 
 console.log(`====================`);
 console.log(chalk.blue(`END OF CODE DEMONSTRATION`));
+
+console.log(`\n********************************\n`);
+
+// Additional Tasks Demonstration
+console.log(chalk.magenta(`PRODUCTION CODE (for additional tasks)`));
+console.log(`====================`);
+
+console.log(chalk.green(`Test Plane 2 is instructed to take off when weather is not stormy:`));
+console.log(`Current weather condition: ${WeatherChecker.getCurrentWeather()}.`);  // 'Not stormy' by default
+airport.instructToTakeOff(testPlane2);
+console.log(`Test Plane 2 receives instruction to take off: ${testPlane2.getInstructedToTakeOff()}.`);
+airport.removePlane(testPlane2);
+console.log(`Test Plane 2 is at the airport: ${testPlane2.getIsAtAirport()}.`);
+console.log(`The number of planes at the airport is ${airport.getNumOfPlanesAtAirport()}.`);
+console.log(`The airport is full: ${airport.isFull()}.`);
+
+console.log(chalk.green(`Air traffic control instructs Test Plane 3 to take off despite stormy weather:`));
+WeatherChecker.setCurrentWeather('stormy');  // Setting weather for testing purpose, functionality not for user
+console.log(`Current weather condition: ${WeatherChecker.getCurrentWeather()}.`);
+airport.instructToTakeOff(testPlane3);
+console.log(`Test Plane 3 receives instruction to take off: ${testPlane3.getInstructedToTakeOff()}.`);
+
+console.log(chalk.green(`Air traffic control instructs Test Plane 4 wants to land despite stormy weather:`));
+console.log(`Current weather condition: ${WeatherChecker.getCurrentWeather()}.`);
+airport.instructToLand(testPlane4);
+console.log(`Test Plane 4 receives instruction to land: ${testPlane3.getInstructedToLand()}.`);
+
+console.log(chalk.green(`Test Plane 1 is instructed to land when weather is not stormy:`));
+WeatherChecker.setCurrentWeather('not stormy');
+console.log(`Current weather condition: ${WeatherChecker.getCurrentWeather()}.`);
+airport.instructToLand(testPlane1);
+console.log(`Test Plane 1 receives instruction to land: ${testPlane1.getInstructedToLand()}.`);
+
+console.log(`====================`);
+console.log(chalk.magenta(`END OF CODE DEMONSTRATION`));
